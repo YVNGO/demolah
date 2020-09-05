@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="Sushi Station" content="Sushi cafe">
+  <meta name="keywords" content="cafe,sushi,Station">
+<title>Sushi Station</title>
+<style>
+
+@media screen {
+
+.tablinks{
+  border: 2px solid yellow;
+  border-bottom: hidden;
+  border-width: thin;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  background-color: grey;
+}
+
+
+  .qty {
+    text-align: right;
+  }
+  .description{
+    text-align: left;
+
+  }
+  body{
+    background-color: lightblue;
+  }
+
+  h2{
+  color: forestgreen;
+  }
+  p{
+    color: #C013FE;
+  }
+  #header{
+
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 55px;
+  }
+  .OrdItemsHeader{
+
+  border: 4px dotted blue;
+
+  }
+  #ordereditems{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+  }
+  table{
+    border-collapse: collapse;
+  }
+  td{
+    border-bottom: 1px solid orange;
+  }
+  #ordereditemblock {
+
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 20%;
+
+
+}
+#OrdItemsFooter p a{
+  text-decoration: none;
+  color: blue;
+}
+#footer{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border: 2px solid black;
+  border-width: thin;
+  border-radius: 20px;
+  width: 32em;
+}
+
+
+
+#Sushi{
+  display: none;
+
+}
+
+#Drinks{
+  display: none;
+}
+
+#Dessert{
+  display: none;
+}
+
+#sushitab{
+  width: 33%;
+  float: left;
+}
+#drinkstab{
+  width: 33%;
+  float: left;
+}
+#desserttab{
+  width: 33%;
+  float: left;
+}
+#sushi1{
+  float: left;
+  width: 33%;
+}
+#sushi2{
+  float: left;
+  width: 33%;
+}
+#sushi3{
+  float: left;
+  width: 33%;
+}
+#sushi4{
+  float: left;
+  width: 33%;
+}
+#drink1{
+  float: left;
+  width: 33%;
+}
+#drink2{
+  float: left;
+  width: 33%;
+}
+#drink3{
+  float: left;
+  width: 33%;
+}
+#dessert{
+position: relative;
+    left:66%;
+    width: 33%;
+
+}
+.odd{
+  background-color: orange;
+}
+.even{
+  background-color: yellow;
+}
+#ordereditemblock{
+  float: left;
+  position: relative;
+  transition: width 2s;
+}
+#ordereditemblock:hover {
+  width: 60%;
+}
+table{
+  transition: width 2s;
+}
+table:hover{
+  width: 60%;
+}
+@keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+footer{
+
+  position: relative;
+  float: right;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+#header{
+  column-span: all;
+}
+
+}
+@media print {
+
+  #OrdItemsFooter p a{
+    text-decoration: none;
+    color: blue;
+  }
+  table{
+    border-collapse: collapse;
+  }
+  td{
+    border-bottom: 1px solid orange;
+  }
+  section, footer,span{
+    display: none;
+  }
+.noprint{
+  display: none;
+}
+  #header{
+
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    width: 30%;
+  }
+  .OrdItemsHeader{
+
+  border: 4px dotted blue;
+
+  }
+  #ordereditems{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+  }
+  #ordereditemblock {
+
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 30%;
+}
+
+
+}
+</style>
+
+</head>
+
+<body onload="colorChangeSushi()">
+  <div id="header">
+  <h1>    <img src="../../img/Sushi-96.png" alt="logo of cafe" title="Sushi Station"> Sushi Station </h1>
+
+  </div>
+
+
+    <fieldset id ="menublock" class="noprint" >
+      <section id="menu">
+      <h2 class="noprint"> Menu</h2>
+        <span class="tablinks" id="sushitab" onclick="colorChangeSushi()">Sushi</span>
+        <span class="tablinks" id="drinkstab" onclick="colorChangeDrinks()">Drinks</span>
+        <span class="tablinks" id="desserttab" onclick="colorChangeDessert()">Dessert</span>
+
+
+    <div id="Sushi" class="tabcontent">
+
+      <div id="sushi1">
+        <img src="../../img/sushi1.jpg" alt="sushi1" title="sushi1">
+        <input type="number" id="qtysushi1" name="qtysushi1" value>
+        <button id="sushiBtn1" type="button" name="button">Add</button>
+      </div>
+      <div id="sushi2">
+        <img src="../../img/sushi2.jpg" alt="sushi2" title="sushi2">
+        <input type="number" id="qtysushi2" name="qtysushi2" value>
+        <button id="sushiBtn2" type="button" name="button">Add</button>
+      </div>
+      <div id="sushi3">
+        <img src="../../img/sushi3.jpg" alt="sushi3" title="sushi3">
+        <input type="number" id="qtysushi3" name="qtysushi3" value>
+        <button id="sushiBtn3" type="button" name="button">Add</button>
+      </div>
+      <div id="sushi4">
+        <img src="../../img/sushi1.jpg" alt="sushi4" title="sushi4">
+        <input type="number" id="qtysushi4" name="qtysushi4" value>
+        <button id="sushiBtn4" type="button" name="button">Add</button>
+      </div>
+    </div>
+    <div id="Drinks" class="tabcontent">
+      <div id="drink1">
+        <img src="../../img/drink1.jpg" alt="drink1" title="drink1">
+        <input type="number" id="qtydrink1" name="qtydrink1" value>
+        <button id="drinksBtn1" type="button" name="button">Add</button>
+      </div>
+      <div id="drink2">
+        <img src="../../img/drink2.jpg" alt="drink2" title="drink2">
+        <input type="number" id="qtydrink2" name="qtydrink2" value>
+        <button id="drinksBtn2" type="button" name="button">Add</button>
+      </div>
+      <div id="drink3">
+        <img src="../../img/drink1.jpg" alt="drink3" title="drink3">
+        <input type="number" id="qtydrink3" name="qtydrink3" value>
+        <button id="drinksBtn3" type="button" name="button">Add</button>
+      </div>
+    </div>
+
+    <div id="Dessert" class="tabcontent">
+      <div id="dessert">
+        <img src="../../img/dessert.jpg" alt="dessert" title="dessert">
+        <input type="number" id="qtydessert" name="qtydessert" value>
+        <button id="dessertsBtn1" type="button" name="button">Add</button>
+      </div>
+    </div>
+  </section>
+</fieldset>
+<br>
+<div id="ordereditemblock">
+
+<fieldset>
+  <div class="OrdItemsHeader">
+  <h2>Ordered Items:</h2>
+  <p >15 Oct 2019 19:00</p>
+  <br>
+  <table id="ordereditems">
+  <caption> Table:4-No. of Guests 3</caption>
+    <thead>
+      <tr>
+        <th class="odd">Description</th>
+
+        <th class="odd">Qty</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <tfoot>
+      <tr class="even">
+        <td class="description">Total</td>
+
+        <td class="qty" id="TotalQty">0</td>
+      </tr>
+    </tfoot>
+
+  </table>
+
+  <p ><a onclick="return undo();" href="#">undo</a></p>
+</div>
+</fieldset>
+</div>
+
+<div id="footer" class="noprint">
+  <footer>
+<small>&copy; CityU 2019 sources of images from <a href="../designpage/designpage.html">CityU CS2204 course</a>; designed by Ayan Dauletyarov</small>
+</footer>
+</div>
+<script>
+var OrdItemsHeader = document.getElementsByTagName("tbody")[0];
+var totalVar = document.getElementsByTagName("tfoot")[0].getElementsByTagName("td")[1];
+var btn = document.querySelectorAll("button");
+var qty = [];
+function recal(){
+    var total = 0;
+    var i = 0;
+    for(i; i<qty.length; i++){
+        total += qty[i];
+    }
+    totalVar.innerHTML = total;
+}
+
+for(var i=0; i<btn.length; i++){
+    btn[i].addEventListener("click", function colorChangeSushi(){
+        var id = this.id;
+        var description = document.querySelector(`img[class='${id}']`).alt;
+        var quantity = document.querySelector(`input[name='${id}']`).value;
+
+        if(quantity>0){
+            qty.push(parseInt(quantity));
+            var addTr = OrdItemsHeader.insertRow();
+            let descriptionText = document.createTextNode(`${description}`);
+            let quantityText = document.createTextNode(`${quantity}`);
+            addTr.insertCell(0).appendChild(descriptionText);
+            addTr.insertCell(1).appendChild(quantityText);
+            recal();
+        }
+    });
+}
+function undo(){
+    if(OrdItemsHeader.rows.length>0){
+        OrdItemsHeader.deleteRow(-1);
+        qty.pop();
+        recal();
+    }
+    return false;
+}
+  function colorChangeSushi(){
+    document.getElementById("sushitab").style.backgroundColor = "white";
+    document.getElementById("drinkstab").style.backgroundColor = "blue";
+    document.getElementById("desserttab").style.backgroundColor = "blue";
+    document.getElementById("Drinks").style.display = "none";
+    document.getElementById("Dessert").style.display = "none";
+    document.getElementById("Sushi").style.display = "block";
+  }
+  function colorChangeDrinks(){
+    document.getElementById("sushitab").style.backgroundColor = "blue";
+    document.getElementById("drinkstab").style.backgroundColor = "white";
+    document.getElementById("desserttab").style.backgroundColor = "blue";
+    document.getElementById("Drinks").style.display = "block";
+    document.getElementById("Dessert").style.display = "none";
+    document.getElementById("Sushi").style.display = "none";
+  }
+  function colorChangeDessert(){
+    document.getElementById("sushitab").style.backgroundColor = "blue";
+    document.getElementById("drinkstab").style.backgroundColor = "blue";
+    document.getElementById("desserttab").style.backgroundColor = "white";
+    document.getElementById("Drinks").style.display = "none";
+    document.getElementById("Dessert").style.display = "block";
+    document.getElementById("Sushi").style.display = "none";
+  }
+</script>
+</body>
+
+</html>
